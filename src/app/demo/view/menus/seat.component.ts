@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
     </div>
   `
 })
-export class SeatComponent{
+export class SeatComponent {
 
-  constructor() { }
+  constructor() {
+  }
 }

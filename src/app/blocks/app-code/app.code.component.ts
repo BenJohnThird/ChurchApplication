@@ -2,32 +2,34 @@ import { Component, ElementRef, AfterViewInit, Input, NgModule, ViewChild } from
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-code',
-    template: `
+  selector: 'app-code',
+  template: `
         <pre [ngClass]="'language-' + lang"><code #code><ng-content></ng-content>
 </code></pre>
     `,
 })
 export class AppCodeComponent implements AfterViewInit {
 
-    @Input() lang = 'markup';
+  @Input() public lang = 'markup';
 
-    @ViewChild('code') codeViewChild: ElementRef;
+  @ViewChild('code') public codeViewChild: ElementRef;
 
-    constructor(public el: ElementRef) { }
+  constructor(public el: ElementRef) {
+  }
 
-    ngAfterViewInit() {
-        // @ts-ignore
-        if (window['Prism']) {
-            // @ts-ignore
-            window['Prism'].highlightElement(this.codeViewChild.nativeElement);
-        }
+  public ngAfterViewInit() {
+    // @ts-ignore
+    if (window.Prism) {
+      // @ts-ignore
+      window.Prism.highlightElement(this.codeViewChild.nativeElement);
     }
+  }
 }
 
 @NgModule({
-    imports: [CommonModule],
-    exports: [AppCodeComponent],
-    declarations: [AppCodeComponent]
+  imports: [CommonModule],
+  exports: [AppCodeComponent],
+  declarations: [AppCodeComponent]
 })
-export class AppCodeModule { }
+export class AppCodeModule {
+}

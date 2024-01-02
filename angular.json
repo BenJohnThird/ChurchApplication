@@ -7,7 +7,8 @@
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
-                    "style": "scss"
+                    "style": "scss",
+                  "skipTests": true
                 }
             },
             "root": "",
@@ -17,7 +18,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/mirage-ng",
+                        "outputPath": "dist",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -33,13 +34,16 @@
                             "src/styles.scss",
                             "./node_modules/@fullcalendar/common/main.css",
                             "./node_modules/@fullcalendar/daygrid/main.css",
-                            "./node_modules/@fullcalendar/timegrid/main.css"
+                            "./node_modules/@fullcalendar/timegrid/main.css",
+                          "node_modules/primeng/resources/primeng.min.css",
+                          "node_modules/primeflex/primeflex.css",
+                          "node_modules/primeicons/primeicons.css"
                         ],
                         "scripts": [
                             "node_modules/prismjs/prism.js",
                             "node_modules/prismjs/components/prism-typescript.js"
                         ]
-                        
+
                     },
                     "configurations": {
                         "production": {

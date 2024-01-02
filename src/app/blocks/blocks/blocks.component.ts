@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { BreadcrumbService } from 'src/app/breadcrumb.service';
+
 @Component({
   templateUrl: './blocks.component.html'
 })
-export class BlocksComponent{
+export class BlocksComponent {
 
-    constructor(private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            {label: 'Prime Blocks'},
-            {label: 'Free Blocks', routerLink:['/blocks']}
-        ]);
-    }
-  block1: string = `
+  constructor(private breadcrumbService: BreadcrumbService) {
+    this.breadcrumbService.setItems([
+      {label: 'Prime Blocks'},
+      {label: 'Free Blocks', routerLink: ['/blocks']}
+    ]);
+  }
+
+  public block1 = `
   <div class="grid grid-nogutter surface-section text-800">
       <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
           <section>
@@ -28,7 +30,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block2: string = `
+  public block2 = `
   <div class="surface-section px-4 py-8 md:px-6 lg:px-8 text-center">
       <div class="mb-3 font-bold text-2xl">
           <span class="text-900">One Product, </span>
@@ -81,7 +83,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block3: string = `
+  public block3 = `
   <div class="surface-ground px-4 py-8 md:px-6 lg:px-8">
       <div class="text-900 font-bold text-6xl mb-4 text-center">Pricing Plans</div>
       <div class="text-700 text-xl mb-6 text-center line-height-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.</div>
@@ -198,7 +200,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block4: string = `
+  public block4 = `
   <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
       <div class="text-700 text-center">
           <div class="text-blue-600 font-bold mb-3"><i class="pi pi-discord"></i>&nbsp;POWERED BY DISCORD</div>
@@ -208,7 +210,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block5: string = `
+  public block5 = `
   <div class="bg-bluegray-900 text-gray-100 p-3 flex justify-content-between lg:justify-content-center align-items-center flex-wrap">
       <div class="font-bold mr-8">🔥 Hot Deals!</div>
       <div class="align-items-center hidden lg:flex">
@@ -222,7 +224,7 @@ export class BlocksComponent{
       </a>
   </div>`;
 
-      block6: string = `
+  public block6 = `
   <div class="surface-section px-4 py-5 md:px-6 lg:px-8">
       <ul class="list-none p-0 m-0 flex align-items-center font-medium mb-3">
           <li>
@@ -260,7 +262,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block7: string = `
+  public block7 = `
   <div class="surface-ground px-4 py-5 md:px-6 lg:px-8">
       <div class="grid">
           <div class="col-12 md:col-6 lg:col-3">
@@ -326,7 +328,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block8: string = `
+  public block8 = `
   <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
       <div class="text-center mb-5">
           <img src="assets/demo/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
@@ -354,7 +356,7 @@ export class BlocksComponent{
       </div>
   </div>`;
 
-      block9: string = `
+  public block9 = `
   <div class="surface-section">
       <div class="font-medium text-3xl text-900 mb-3">Movie Information</div>
       <div class="text-500 mb-5">Morbi tristique blandit turpis. In viverra ligula id nulla hendrerit rutrum.</div>
@@ -403,7 +405,7 @@ export class BlocksComponent{
       </ul>
   </div>`;
 
-      block10: string = `
+  public block10 = `
   <div class="surface-card p-4 shadow-2 border-round">
       <div class="text-3xl font-medium text-900 mb-3">Card Title</div>
       <div class="font-medium text-500 mb-3">Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.</div>

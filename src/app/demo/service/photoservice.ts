@@ -6,12 +6,13 @@ import { Image } from '../domain/image';
 @Injectable()
 export class PhotoService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-    getImages() {
+  public getImages() {
     return this.http.get<any>('assets/demo/data/photos.json')
       .toPromise()
       .then(res => res.data as Image[])
       .then(data => data);
-    }
+  }
 }

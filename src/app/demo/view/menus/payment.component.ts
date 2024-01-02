@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
     </div>
   `
 })
-export class PaymentComponent{
+export class PaymentComponent {
 
-  constructor() { }
+  constructor() {
+  }
 }

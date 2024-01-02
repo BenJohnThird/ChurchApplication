@@ -13,15 +13,18 @@ import { MenusComponent } from './menus.component';
   imports: [
     CommonModule,
     RouterModule.forChild([
-        {path:'',component: MenusComponent, children:[
-				{path:'', redirectTo: 'personal', pathMatch: 'full'},
-				{path: 'personal', component: PersonalComponent},
-				{path: 'confirmation', component: ConfirmationComponent},
-				{path: 'seat', component: SeatComponent},
-				{path: 'payment', component: PaymentComponent}
-        ]}
+      {
+        path: '', component: MenusComponent, children: [
+          {path: '', redirectTo: 'personal', pathMatch: 'full'},
+          {path: 'personal', component: PersonalComponent},
+          {path: 'confirmation', component: ConfirmationComponent},
+          {path: 'seat', component: SeatComponent},
+          {path: 'payment', component: PaymentComponent}
+        ]
+      }
     ])
   ],
   exports: [RouterModule]
 })
-export class MenusModule { }
+export class MenusModule {
+}

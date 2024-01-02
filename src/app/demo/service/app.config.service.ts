@@ -5,23 +5,23 @@ import { AppConfig } from '../domain/appconfig';
 @Injectable()
 export class ConfigService {
 
-    config: AppConfig = {
-        theme: 'lara-light-indigo',
-        dark: false,
-        inputStyle: 'outlined',
-        ripple: true
-    };
+  public config: AppConfig = {
+    theme: 'lara-light-indigo',
+    dark: false,
+    inputStyle: 'outlined',
+    ripple: true
+  };
 
-    private configUpdate = new Subject<AppConfig>();
+  private configUpdate = new Subject<AppConfig>();
 
-    configUpdate$ = this.configUpdate.asObservable();
+  public configUpdate$ = this.configUpdate.asObservable();
 
-    updateConfig(config: AppConfig) {
-        this.config = config;
-        this.configUpdate.next(config);
-    }
+  public updateConfig(config: AppConfig) {
+    this.config = config;
+    this.configUpdate.next(config);
+  }
 
-    getConfig() {
-        return this.config;
-    }
+  public getConfig() {
+    return this.config;
+  }
 }

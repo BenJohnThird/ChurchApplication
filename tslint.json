@@ -4,34 +4,34 @@
         "codelyzer"
     ],
     "rules": {
-        "align": {
-            "options": [
-                "parameters",
-                "statements"
-            ]
-        },
         "array-type": false,
-        "arrow-return-shorthand": true,
-        "curly": true,
+        "arrow-parens": false,
         "deprecation": {
-            "severity": "warning"
+            "severity": "warn"
         },
-        "eofline": true,
         "import-blacklist": [
             true,
-            "rxjs/Rx"
+            "rxjs/Rx",
+            "primeng/primeng",
+            "ngx-bootstrap",
+            "primeng/components/common/api",
+            "primeng/components/common/messageservice",
+            "@angular/router/src/shared",
+            "@angular/router/src/router_state",
+            "@angular/forms/src/directives/validators",
+            "lodash.clonedeep",
+            "util"
         ],
-        "import-spacing": true,
-        "indent": {
-            "options": [
-                "spaces"
-            ]
-        },
+        "interface-name": false,
         "max-classes-per-file": false,
         "max-line-length": [
             true,
-            140
+            {
+                "limit": 120,
+                "ignore-pattern": "^import |^export | implements "
+            }
         ],
+        "member-access": true,
         "member-ordering": [
             true,
             {
@@ -43,13 +43,15 @@
                 ]
             }
         ],
+        "no-consecutive-blank-lines": false,
         "no-console": [
             true,
             "debug",
             "info",
             "time",
             "timeEnd",
-            "trace"
+            "trace",
+            "log"
         ],
         "no-empty": false,
         "no-inferrable-types": [
@@ -57,92 +59,47 @@
             "ignore-params"
         ],
         "no-non-null-assertion": true,
-        "no-redundant-jsdoc": true,
+        "no-redundant-jsdoc": false,
         "no-switch-case-fall-through": true,
+        "no-use-before-declare": true,
         "no-var-requires": false,
         "object-literal-key-quotes": [
             true,
             "as-needed"
         ],
+        "object-literal-shorthand": false,
+        "object-literal-sort-keys": false,
+        "ordered-imports": false,
+        "prefer-for-of": false,
         "quotemark": [
             true,
             "single"
         ],
-        "semicolon": {
-            "options": [
-                "always"
-            ]
-        },
-        "space-before-function-paren": {
-            "options": {
-                "anonymous": "never",
-                "asyncArrow": "always",
-                "constructor": "never",
-                "method": "never",
-                "named": "never"
-            }
-        },
-        "typedef-whitespace": {
-            "options": [
-                {
-                    "call-signature": "nospace",
-                    "index-signature": "nospace",
-                    "parameter": "nospace",
-                    "property-declaration": "nospace",
-                    "variable-declaration": "nospace"
-                },
-                {
-                    "call-signature": "onespace",
-                    "index-signature": "onespace",
-                    "parameter": "onespace",
-                    "property-declaration": "onespace",
-                    "variable-declaration": "onespace"
-                }
-            ]
-        },
-        "variable-name": {
-            "options": [
-                "ban-keywords",
-                "check-format",
-                "allow-pascal-case"
-            ]
-        },
-        "whitespace": {
-            "options": [
-                "check-branch",
-                "check-decl",
-                "check-operator",
-                "check-separator",
-                "check-type",
-                "check-typecast"
-            ]
-        },
-        "component-class-suffix": true,
-        "contextual-lifecycle": true,
-        "directive-class-suffix": true,
-        "no-conflicting-lifecycle": true,
-        "no-host-metadata-property": true,
+        "trailing-comma": false,
+        "no-output-on-prefix": false,
+        "use-input-property-decorator": true,
+        "use-output-property-decorator": true,
+        "use-host-property-decorator": true,
         "no-input-rename": true,
-        "no-inputs-metadata-property": true,
-        "no-output-native": true,
-        "no-output-on-prefix": true,
         "no-output-rename": true,
-        "no-outputs-metadata-property": true,
-        "template-banana-in-box": true,
-        "template-no-negated-async": true,
-        "use-lifecycle-interface": true,
+        "use-life-cycle-interface": true,
         "use-pipe-transform-interface": true,
-        "directive-selector": [
+        "component-class-suffix": true,
+        "directive-class-suffix": true,
+        "typedef": [
             true,
-            "attribute",
-            "app",
-            "camelCase"
+            "call-signature",
+            "parameter"
         ],
-        "component-selector": [
+        "whitespace": [
             true,
-            "element",
-            "app",
-            "kebab-case"
+            "check-module"
+        ],
+        "forin": false,
+        "newline-per-chained-call": true,
+        "variable-name": [
+            true,
+            "allow-leading-underscore"
         ]
     }
 }

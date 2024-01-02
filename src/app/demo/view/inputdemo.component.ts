@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {CountryService} from '../service/countryservice';
-import {SelectItem} from 'primeng/api';
-import {BreadcrumbService} from '../../breadcrumb.service';
+import { Component, OnInit } from '@angular/core';
+import { CountryService } from '../service/countryservice';
+import { SelectItem } from 'primeng/api';
+import { BreadcrumbService } from '../../breadcrumb.service';
 
 @Component({
-    templateUrl: './inputdemo.component.html',
-    styles: [`:host ::ng-deep .p-multiselect {
+  templateUrl: './inputdemo.component.html',
+  styles: [`:host ::ng-deep .p-multiselect {
 		min-width: 15rem;
 	}
 
@@ -52,80 +52,80 @@ import {BreadcrumbService} from '../../breadcrumb.service';
 	}
     `]
 })
-export class InputDemoComponent implements OnInit{
-    countries: any[];
+export class InputDemoComponent implements OnInit {
+  public countries: any[];
 
-    filteredCountries: any[];
+  public filteredCountries: any[];
 
-    selectedCountryAdvanced: any[];
+  public selectedCountryAdvanced: any[];
 
-    valSlider = 50;
+  public valSlider = 50;
 
-    valColor = '#424242';
+  public valColor = '#424242';
 
-    valRadio: string;
+  public valRadio: string;
 
-    valCheck: string[] = [];
+  public valCheck: string[] = [];
 
-    valCheck2: boolean;
+  public valCheck2: boolean;
 
-    valSwitch: boolean;
+  public valSwitch: boolean;
 
-    cities: SelectItem[];
+  public cities: SelectItem[];
 
-    selectedList: SelectItem;
+  public selectedList: SelectItem;
 
-    selectedDrop: SelectItem;
+  public selectedDrop: SelectItem;
 
-    selectedMulti: string[] = [];
+  public selectedMulti: string[] = [];
 
-    valToggle = false;
+  public valToggle = false;
 
-    paymentOptions: any[];
+  public paymentOptions: any[];
 
-    valSelect1: string;
+  public valSelect1: string;
 
-    valSelect2: string;
+  public valSelect2: string;
 
-    valueKnob = 20;
+  public valueKnob = 20;
 
-    constructor(private countryService: CountryService, private breadcrumbService: BreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
-            { label: 'Input', routerLink: ['/uikit/input'] }
-        ]);
+  constructor(private countryService: CountryService, private breadcrumbService: BreadcrumbService) {
+    this.breadcrumbService.setItems([
+      {label: 'UI Kit'},
+      {label: 'Input', routerLink: ['/uikit/input']}
+    ]);
+  }
+
+  public ngOnInit() {
+    this.countryService.getCountries().then(countries => {
+      this.countries = countries;
+    });
+
+    this.cities = [
+      {label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}},
+      {label: 'Rome', value: {id: 2, name: 'Rome', code: 'RM'}},
+      {label: 'London', value: {id: 3, name: 'London', code: 'LDN'}},
+      {label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}},
+      {label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}}
+    ];
+
+    this.paymentOptions = [
+      {name: 'Option 1', value: 1},
+      {name: 'Option 2', value: 2},
+      {name: 'Option 3', value: 3}
+    ];
+  }
+
+  public filterCountry(event) {
+    const filtered: any[] = [];
+    const query = event.query;
+    for (let i = 0; i < this.countries.length; i++) {
+      const country = this.countries[i];
+      if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+        filtered.push(country);
+      }
     }
 
-    ngOnInit() {
-        this.countryService.getCountries().then(countries => {
-            this.countries = countries;
-        });
-
-        this.cities = [
-            {label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}},
-            {label: 'Rome', value: {id: 2, name: 'Rome', code: 'RM'}},
-            {label: 'London', value: {id: 3, name: 'London', code: 'LDN'}},
-            {label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}},
-            {label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}}
-        ];
-
-        this.paymentOptions = [
-            {name: 'Option 1', value: 1},
-            {name: 'Option 2', value: 2},
-            {name: 'Option 3', value: 3}
-        ];
-    }
-
-    filterCountry(event) {
-        const filtered: any[] = [];
-        const query = event.query;
-        for (let i = 0; i < this.countries.length; i++) {
-            const country = this.countries[i];
-            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-                filtered.push(country);
-            }
-        }
-
-        this.filteredCountries = filtered;
-    }
+    this.filteredCountries = filtered;
+  }
 }

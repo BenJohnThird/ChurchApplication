@@ -20,7 +20,7 @@ enum BlockView {
                 <a [attr.tabindex]="'0'" [ngClass]="{'block-action-active': blockView == BlockView.CODE}" (click)="activateView($event, BlockView.CODE)">
                     <span>Code</span>
                 </a>
-                <a [attr.tabindex]="'0'" class="block-action-copy" (click)="copyCode($event)" 
+                <a [attr.tabindex]="'0'" class="block-action-copy" (click)="copyCode($event)"
                     pTooltip="Copied to clipboard" tooltipEvent="focus" tooltipPosition="bottom"><i class="pi pi-copy m-0"></i></a>
             </div>
         </div>
@@ -38,30 +38,30 @@ enum BlockView {
   styleUrls: ['./blockviewer.component.scss']
 })
 export class BlockViewer {
-  
-  @Input() header: string;
 
-  @Input() code: string;
+  @Input() public header: string;
 
-  @Input() containerClass: string;
+  @Input() public code: string;
 
-  @Input() previewStyle: string;
+  @Input() public containerClass: string;
 
-  @Input() free: boolean = true;
+  @Input() public previewStyle: string;
 
-  @Input() new: boolean = false;
+  @Input() public free = true;
 
-  BlockView = BlockView;
+  @Input() public new = false;
 
-  blockView: BlockView = BlockView.PREVIEW;
+  public BlockView = BlockView;
 
-  activateView(event: Event, blockView: BlockView) {
+  public blockView: BlockView = BlockView.PREVIEW;
 
-    this.blockView = blockView;  
+  public activateView(event: Event, blockView: BlockView) {
+
+    this.blockView = blockView;
     event.preventDefault();
   }
 
-  async copyCode(event: Event) {
+  public async copyCode(event: Event) {
     await navigator.clipboard.writeText(this.code);
     event.preventDefault();
   }

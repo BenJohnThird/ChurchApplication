@@ -6,29 +6,30 @@ import { TreeNode } from 'primeng/api';
 @Injectable()
 export class NodeService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-    getFiles() {
+  public getFiles() {
     return this.http.get<any>('assets/demo/data/files.json')
       .toPromise()
       .then(res => res.data as TreeNode[]);
-    }
+  }
 
-    getLazyFiles() {
+  public getLazyFiles() {
     return this.http.get<any>('assets/demo/data/files-lazy.json')
       .toPromise()
       .then(res => res.data as TreeNode[]);
-    }
+  }
 
-    getFilesystem() {
+  public getFilesystem() {
     return this.http.get<any>('assets/demo/data/filesystem.json')
       .toPromise()
       .then(res => res.data as TreeNode[]);
-    }
+  }
 
-    getLazyFilesystem() {
+  public getLazyFilesystem() {
     return this.http.get<any>('assets/demo/data/filesystem-lazy.json')
       .toPromise()
       .then(res => res.data as TreeNode[]);
-    }
+  }
 }
